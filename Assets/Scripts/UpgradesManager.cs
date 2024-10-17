@@ -10,4 +10,9 @@ public class UpgradesManager : MonoBehaviour {
 
 
     
+    public List<Upgrade> GetUpgradesList()
+    {
+        return UpgradeList;
+    }
+
 }

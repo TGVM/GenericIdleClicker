@@ -11,7 +11,7 @@ public class ScrollerUI : MonoBehaviour
     void Start()
     {
         
-        //List<Upgrade> upgradesList = Manager.Instance.GetList();
+        List<Upgrade> upgradesList = UpgradesManager.Instance.GetUpgradesList();
         foreach(Upgrade u in upgradesList)
         {
             UpgradeUI upgradeUIiteration = upgradeUIPrefab;

@@ -35,6 +35,11 @@ public class Manager : MonoBehaviour
         currency += value;
     }
 
+    public void IncreaseCurrencyPerSecond(int value)
+    {
+        currencyPerSecond += value;
+    }
+
     public int GetCurrency()
     {
         return currency;

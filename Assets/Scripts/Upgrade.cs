@@ -10,14 +10,26 @@ public class Upgrade
     [SerializeField] private string upgradeName;
     [SerializeField] private string upgradeDescription;
     [SerializeField] private Image icon;
+    [SerializeField] private int level;
 
     [SerializeField] private int addToCPS;
 
-    public void increasePrice()
+    public void IncreasePrice()
     {
         float multiplyer = 0.7f;
         price += (int)(price * multiplyer);
     }
 
+    public void UpgradeBought()
+    {
+        Manager.Instance.IncreaseCurrencyPerSecond(addToCPS);
+        IncreasePrice();
+        level++;
+    }
+
+    public string GetUpgradeName() { return upgradeName; }
+    public string GetUpgradeDescription() {  return upgradeDescription; }
+    public int GetLevel() { return level; }
+    public int GetPrice() {  return price; }
 
 }
