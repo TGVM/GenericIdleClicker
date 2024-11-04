@@ -20,11 +20,16 @@ public class Upgrade
         price += (int)(price * multiplyer);
     }
 
-    public void UpgradeBought()
+    public bool UpgradeBought()
     {
-        Manager.Instance.IncreaseCurrencyPerSecond(addToCPS);
-        IncreasePrice();
-        level++;
+        if(Manager.Instance.GetCurrency() >= price)
+        {
+            Manager.Instance.IncreaseCurrencyPerSecond(addToCPS);
+            IncreasePrice();
+            level++;
+            return true;
+        }
+        return false;
     }
 
     public string GetUpgradeName() { return upgradeName; }
