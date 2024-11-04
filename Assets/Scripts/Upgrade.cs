@@ -25,6 +25,7 @@ public class Upgrade
         if(Manager.Instance.GetCurrency() >= price)
         {
             Manager.Instance.IncreaseCurrencyPerSecond(addToCPS);
+            Manager.Instance.IncreaseCurrency(-price);
             IncreasePrice();
             level++;
             return true;
