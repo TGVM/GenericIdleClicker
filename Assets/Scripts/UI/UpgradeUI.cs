@@ -13,30 +13,46 @@ public class UpgradeUI : MonoBehaviour
     //[SerializeField] private Image icon;
     [SerializeField] private Button buyButton;
 
+    [SerializeField] private Color wrongColor;
+    [SerializeField] private Color rightColor;
+    private Color prevColor;
+
     private Upgrade upgradeReference;
 
 
-    //onclick
-    //buy upgrade -> call function UpgradeBought on upgradeReference
-    //              -> updateVisuals
     private void Start()
     {
+        prevColor = buyButton.image.color;
 
         buyButton.onClick.AddListener(() =>
         {
             if(upgradeReference.UpgradeBought())
             {
                 UpdateVisuals();
+                RightBlink();
             }
             else {
-                RedBlink();
+                WrongBlink();
             }
         });
     }
 
-    private void RedBlink()
+    private void RightBlink()
     {
-        //TODO
+        buyButton.image.color = rightColor;
+        Invoke("ReturnToDefaultColor", 0.15f);
+    }
+
+    private void WrongBlink()
+    {
+        buyButton.image.color = wrongColor;
+        Invoke("ReturnToDefaultColor", 0.15f);
+
+    }
+
+    private void ReturnToDefaultColor()
+    {
+        buyButton.image.color = prevColor;
     }
 
     private void UpdateVisuals()

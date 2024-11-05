@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UpgradeContainerUI : MonoBehaviour
@@ -10,10 +11,11 @@ public class UpgradeContainerUI : MonoBehaviour
     private List<UpgradeUI> UpgradeList;
 
 
-    private void Start()
+    private void Awake()
     {
         UpgradeList = new List<UpgradeUI>();
     }
+
 
     private void OnEnable()
     {
