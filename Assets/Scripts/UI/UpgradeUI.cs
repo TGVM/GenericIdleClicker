@@ -10,7 +10,7 @@ public class UpgradeUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI titleText;
     [SerializeField] private TextMeshProUGUI descriptionText;
     [SerializeField] private TextMeshProUGUI priceText;
-    //[SerializeField] private Image icon;
+    [SerializeField] private Image icon;
     [SerializeField] private Button buyButton;
 
     [SerializeField] private Color wrongColor;
@@ -60,6 +60,7 @@ public class UpgradeUI : MonoBehaviour
         titleText.text = upgradeReference.GetUpgradeName();
         descriptionText.text = upgradeReference.GetUpgradeDescription();
         priceText.text = upgradeReference.GetPrice().ToString();
+        icon.sprite = upgradeReference.GetIcon();
     }
 
     public void SetReference(Upgrade upgrade) { 

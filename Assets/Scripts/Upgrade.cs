@@ -37,5 +37,6 @@ public class Upgrade
     public string GetUpgradeDescription() {  return upgradeDescription; }
     public int GetLevel() { return level; }
     public int GetPrice() {  return price; }
+    public Sprite GetIcon() { return icon; }
 
 }

@@ -127,6 +127,7 @@ MonoBehaviour:
   titleText: {fileID: 5930151394617043594}
   descriptionText: {fileID: 5039068806672040571}
   priceText: {fileID: 7482536702165068635}
+  icon: {fileID: 2501571095648198066}
   buyButton: {fileID: 2972552233739710982}
   wrongColor: {r: 1, g: 0, b: 0, a: 1}
   rightColor: {r: 0, g: 0.7169812, b: 0.046721768, a: 1}
