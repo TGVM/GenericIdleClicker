@@ -15,10 +15,19 @@ public class UpgradeUI : MonoBehaviour
 
     [SerializeField] private Color wrongColor;
     [SerializeField] private Color rightColor;
+
+    [SerializeField] private AudioClip failureSFX;
+    [SerializeField] private AudioClip successSFX;
+
+    private AudioSource audioSource;
     private Color prevColor;
 
     private Upgrade upgradeReference;
 
+    private void Awake()
+    {
+        audioSource = GetComponentInChildren<AudioSource>();
+    }
 
     private void Start()
     {
@@ -40,12 +49,16 @@ public class UpgradeUI : MonoBehaviour
     private void RightBlink()
     {
         buyButton.image.color = rightColor;
+        audioSource.clip = successSFX;
+        audioSource.Play();
         Invoke("ReturnToDefaultColor", 0.15f);
     }
 
     private void WrongBlink()
     {
         buyButton.image.color = wrongColor;
+        audioSource.clip = failureSFX;
+        audioSource.Play();
         Invoke("ReturnToDefaultColor", 0.15f);
 
     }

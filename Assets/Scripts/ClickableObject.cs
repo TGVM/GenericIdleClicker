@@ -12,11 +12,13 @@ public class ClickableObject : MonoBehaviour
     private Transform defaultTransform;
 
     private Camera _camera;
+    private AudioSource _audioSource;
 
     private void Awake()
     {
         _camera = Camera.main;
         defaultTransform = buttonTransform;
+        _audioSource = buttonTransform.GetComponent<AudioSource>();
     }
 
     public void OnClick(InputAction.CallbackContext context)
@@ -27,7 +29,7 @@ public class ClickableObject : MonoBehaviour
         if (!rayHit.collider) return;
 
         ClickAnimation();
-
+        _audioSource.Play();
         Manager.Instance.IncreaseCurrency(1);
     }
 
