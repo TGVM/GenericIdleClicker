@@ -9,7 +9,7 @@ public class Upgrade
     [SerializeField] private int price;
     [SerializeField] private string upgradeName;
     [SerializeField] private string upgradeDescription;
-    [SerializeField] private Image icon;
+    [SerializeField] private Sprite icon;
     [SerializeField] private int level;
 
     [SerializeField] private int addToCPS;
