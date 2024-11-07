@@ -1,6 +1,6 @@
 # GenericIdleClicker
 A project created to build a Generic Idle Clicker game system. The goal was to create a project that is very easy to edit, even for people with little to no experience using unity. <br>
-It's still in developement (mostly art, creation of a main menu and adjustment of some feats that need to be simplified for edition), but it's already functional!
+It's still in developement (mostly creation of a main menu and adjustment of some feats that need to be simplified for edition), but it's already functional!
 
 # Credits
 >SFX:<br>
